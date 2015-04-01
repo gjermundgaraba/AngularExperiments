@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularExperiments</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/main.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+    <div class="container navigation-container">
+        <navigation></navigation>
+    </div>
+
+    <div class="container main-content-area">
+        <div ng-view></div>
+    </div>
+
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+
+<script src="app.js"></script>
+
+<script src="navigation/navigation.module.js"></script>
+<script src="navigation/navigation.controller.js"></script>
+<script src="navigation/navigation.directive.js"></script>
+
+<script src="comments/comments.module.js"></script>
+<script src="comments/comments.controller.js"></script>
+
+<script src="form/form.module.js"></script>
+<script src="form/form.controller.js"></script>
+
+<script src="parse/parse.module.js"></script>
+<script src="parse/parseKeyService.provider.js"></script>
+<script src="parse/objectService/objectService.factory.js"></script>
+
+
+</body>
+</html>
