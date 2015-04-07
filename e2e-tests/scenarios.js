@@ -14,8 +14,11 @@ describe('my app', function () {
         browser.get('#/comments');
         expect(element.all(by.css('.active a')).first().getText()).toBe('Comments');
 
-        browser.get('#/form');
-        expect(element.all(by.css('.active a')).first().getText()).toBe('Form');
+        browser.get('#/todo');
+        expect(element.all(by.css('.active a')).first().getText()).toBe('Todo');
+    });
+
+    describe('Comments', function () {
     });
 
     /*describe('view1', function() {

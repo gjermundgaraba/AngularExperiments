@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app', ['ngRoute', 'navigation', 'comments', 'form'])
+angular.module('app', ['ngRoute', 'navigation', 'comments', 'todo'])
     .config(['$routeProvider',
         function($routeProvider) {
             $routeProvider
@@ -10,11 +10,11 @@ angular.module('app', ['ngRoute', 'navigation', 'comments', 'form'])
                     controllerAs: 'CommentsCtrl',
                     activeTab: 'comments'
                 })
-                .when('/form', {
-                    templateUrl: 'form/form.partial.html',
-                    controller: 'FormController',
-                    controllerAs: 'FormCtrl',
-                    activeTab: 'form'
+                .when('/todo', {
+                    templateUrl: 'todo/todo.partial.html',
+                    controller: 'TodoController',
+                    controllerAs: 'TodoCtrl',
+                    activeTab: 'todo'
                 })
                 .otherwise({
                     redirectTo: '/comments'

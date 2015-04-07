@@ -1,0 +1,9 @@
+<h1>Todo</h1>
+
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="todo in TodoCtrl.todos | orderBy:'createdAt':true">
+        {{todo.title}}
+    </li>
+</ul>
