@@ -2,8 +2,18 @@
 
 <br>
 
+<h4>New Todo</h4>
+<form name="todoForm" ng-submit="todoForm.$valid && TodoCtrl.postNewTodo()" novalidate>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Title" ng-model="TodoCtrl.newTodoTitle" required>
+    </div>
+</form>
+
+<br>
+<hr>
+<h4>Todos</h4>
 <ul class="list-group">
-    <li class="list-group-item" ng-repeat="todo in TodoCtrl.todos | orderBy:'createdAt':true">
+    <li class="list-group-item todo-item" ng-repeat="todo in TodoCtrl.todos | orderBy:'createdAt':true">
         {{todo.title}}
     </li>
 </ul>
