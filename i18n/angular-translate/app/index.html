@@ -13,17 +13,34 @@
 <body>
 
     <div ng-controller="Controller as Ctrl">
-        <h1>{{ 'TITLE' | translate }}</h1>
-        <p>{{ 'FOO' | translate }}</p>
-        <p>{{ 'PLURAL' | translate:"{NUM: 0}"}}</p>
-        <button ng-click="changeLanguage('en')">{{ 'BUTTON_LANG_EN' | translate}}</button>
-        <button ng-click="changeLanguage('de')">{{ 'BUTTON_LANG_DE' | translate}}</button>
-        <button ng-click="changeLanguage('no')">{{ 'BUTTON_LANG_NO' | translate}}</button>
+        <h1 ng-cloak>{{ 'TITLE' | translate }}</h1>
+        <p ng-cloak>{{ 'FOO' | translate }}</p>
+        <input type="number" ng-model="translationData.NUM">
+        <p ng-cloak>{{ 'PLURAL' | translate:translationData}}</p>
+        <button ng-cloak ng-click="changeLanguage('en')">{{ 'BUTTON_LANG_EN' | translate}}</button>
+        <button ng-cloak ng-click="changeLanguage('de')">{{ 'BUTTON_LANG_DE' | translate}}</button>
+        <button ng-cloak ng-click="changeLanguage('no')">{{ 'BUTTON_LANG_NO' | translate}}</button>
+
+        <br>
+        <hr>
+        <button ng-cloak ng-click="statusCode = 400">{{ 'BUTTON_ERROR_400' | translate}}</button>
+        <button ng-cloak ng-click="statusCode = 404">{{ 'BUTTON_ERROR_404' | translate}}</button>
+        <button ng-cloak ng-click="statusCode = 500">{{ 'BUTTON_ERROR_500' | translate}}</button>
+
+        <br>
+        <div ng-switch on="statusCode" >
+            <div ng-switch-when="200">{{'STATUS_MESSAGE_200' | translate}}</div>
+            <div ng-switch-when="400">{{'STATUS_MESSAGE_400' | translate}}</div>
+            <div ng-switch-when="404">{{'STATUS_MESSAGE_404' | translate}}</div>
+            <div ng-switch-when="500">{{'STATUS_MESSAGE_500' | translate}}</div>
+        </div>
     </div>
 
 
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-translate/angular-translate.js"></script>
+    <script src="messageformat.js"></script>
     <script src="app.js"></script>
+    <script src="../bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
 </body>
 </html>
